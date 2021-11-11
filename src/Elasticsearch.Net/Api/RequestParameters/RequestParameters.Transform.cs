@@ -115,6 +115,20 @@ namespace Elasticsearch.Net.Specification.TransformApi
 		}
 	}
 
+	///<summary>Request options for Reset <para>https://www.elastic.co/guide/en/elasticsearch/reference/current/reset-transform.html</para></summary>
+	public class ResetTransformRequestParameters : RequestParameters<ResetTransformRequestParameters>
+	{
+		///<summary>
+		/// When `true`, the transform is reset regardless of its current state. The default value is `false`, meaning that the transform must be
+		/// `stopped` before it can be reset.
+		///</summary>
+		public bool? Force
+		{
+			get => Q<bool? >("force");
+			set => Q("force", value);
+		}
+	}
+
 	///<summary>Request options for Start <para>https://www.elastic.co/guide/en/elasticsearch/reference/current/start-transform.html</para></summary>
 	public class StartTransformRequestParameters : RequestParameters<StartTransformRequestParameters>
 	{
